@@ -27,9 +27,9 @@ function mainMenu() {
             message: "What would you like to do?",
             name: "action",
             choices: [
-                "View All Departments", // view all departments
-                "View All Roles", // view all roles
-                "View All Employees", // view all employees
+                "View All Departments",
+                "View All Roles", 
+                "View All Employees",
                 "Add a Department",
                 "Add a Role",
                 "Add an Employee",
@@ -37,7 +37,10 @@ function mainMenu() {
                 "Update Employee Managers",
                 "View Employees by Manager",
                 "View Employees by Department",
-                "View the Total Utilized Budget of a Department" // the combined salaries of all employees in that department
+                "Delete Departments",
+                "Delete Roles",
+                "Delete Employees",
+                "View the Total Utilized Budget of a Department",  // the combined salaries of all employees in that department
 
             ]
         }
@@ -89,6 +92,13 @@ function viewDepartments() {
 
 function viewRoles() {
     connection.query("SELECT * FROM role;", (err, res) => {
+        console.table(res)
+        mainMenu();
+    })
+}
+
+function viewAllEmployeess() {
+    connection.query("SELECT * FROM department;", (err, res) => {
         console.table(res)
         mainMenu();
     })
