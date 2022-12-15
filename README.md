@@ -2,13 +2,13 @@
 HW Challenge #12
 
 ## Description
-For this challenge we had to create an application called Note Taker that can be used to write and save notes. This application will use an Express.js back end and will save and retrieve note data from a JSON file.
+<!-- For this challenge we had to create an application called Note Taker that can be used to write and save notes. This application will use an Express.js back end and will save and retrieve note data from a JSON file.
 
 The application’s front end has already been created and provided by UCSD Coding Bootcamp. It's our job to build the back end, connect the two, and then deploy the entire application to Heroku.
 
 It was challenging to build the back-end and connect it to the front-end. Even though it was challenging, it was quite enjoyable. I like making notes to myself because it helps me with reminding myself what I have coming up, what I need to do for the day, week, any events that are coming up, and etc. Another challenge I ran into was figuring out how to deploy it onto Heroku. It had failed which was frustrating because it was working fine everywhere else. I finally was able to figure it out.
 
- I had successfully deployed the app on Heroku, the app has no errors in the console, and there are no errors in the app itself. 
+ I had successfully deployed the app on Heroku, the app has no errors in the console, and there are no errors in the app itself.  -->
 
 ## Table of Contents
 * [Installation](#installation)
@@ -39,22 +39,26 @@ npm install
 
     * Update employee managers.
 
-View employees by manager.
+    * View employees by manager.
 
-View employees by department.
+    * View employees by department.
 
-Delete departments, roles, and employees.
+    * Delete departments, roles, and employees.
 
-View the total utilized budget of a department—in other words, the combined salaries of all employees in that department.
+    * View the total utilized budget of a department—in other words, the combined salaries of all employees in that department.
+
 ## User Story
 - AS A business owner
 - I WANT to be able to view and manage the departments, roles, and employees in my company
 - SO THAT I can organize and plan my business
 
-## How to Use This Project and Acceptance Criteria
-Click on the button below to be directed straight to the Heroku deployed application
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://expressjs-challenge-note-taker.herokuapp.com/)
+## How to Use This Project and Acceptance Criteria
+
+[![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/hannybear88/SQL-Challenge-Employee-Tracker)
+<!-- Click on the button below to be directed straight to the Heroku deployed application -->
+
+<!-- [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://expressjs-challenge-note-taker.herokuapp.com/) -->
 
 
 - GIVEN a command-line application that accepts user input
