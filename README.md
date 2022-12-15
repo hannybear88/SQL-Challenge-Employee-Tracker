@@ -30,8 +30,10 @@ npm install
 ## Getting Started and Bonus
 
 **Getting Started**
-You'll need to use the [MySQL2package](https://www.npmjs.com/package/mysql2) to connect to your MySQL database and perform queries, the [Inquirer Package](https://www.npmjs.com/package/mysql2) to interact with the user via the command line, and the 
+You'll need to use the [MySQL2package](https://www.npmjs.com/package/mysql2) to connect to your MySQL database and perform queries, the [Inquirer Package](https://www.npmjs.com/package/mysql2) to interact with the user via the command line, and the [console.package table](https://www.npmjs.com/package/console.table)to print MySQL rows to the console. 
 
+**IMPORTANT**
+You will be committing a file that contains your database credentials. Make sure that your MySQL password is not used for any other personal accounts, because it will be visible on GitHub. In upcoming lessons, you will learn how to better secure this password, or you can start researching npm packages now that could help you.
 
 **Bonus**
 
