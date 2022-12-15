@@ -30,7 +30,7 @@ npm install
 ## Getting Started and Bonus
 
 **Getting Started**
-
+You'll need to use the [MySQL2package](https://www.npmjs.com/package/mysql2) to connect to your MySQL database and perform queries, the [Inquirer Package](https://www.npmjs.com/package/mysql2) to interact with the user via the command line, and the 
 
 
 **Bonus**
