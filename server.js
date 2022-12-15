@@ -46,10 +46,10 @@ function mainMenu() {
         }
     )
     .then(({action}) => {
-        if(action == "View Departments") {
+        if(action == "View All Departments") {
             viewDepartments()
         }
-        if(action == "View Roles") {
+        if(action == "View All Roles") {
             viewRoles()
         }
         if(action == "View All Employees") {
