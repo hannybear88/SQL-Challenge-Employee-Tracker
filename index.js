@@ -27,8 +27,14 @@ function mainMenu() {
             message: "What would you like to do?",
             name: "action",
             choices: [
-                "View Departments",
-                "View Roles"
+                "View Departments", // view all departments
+                "View Roles", // view all roles
+                "View Employees", // view all employees
+                "Add a Department",
+                "Add a Role",
+                "Add an Employee",
+                "Update an Employee Role",
+
             ]
         }
     )
