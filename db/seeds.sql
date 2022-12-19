@@ -8,6 +8,7 @@ insert into department(name) VALUES
 ("Sales"), -- 3
 ("Finance"), -- 4
 ("Legal"); -- 5 
+("IT"); -- 6
 
 -- Role Seeds -- 
 insert into role(title, salary, department_id) VALUES
@@ -26,6 +27,9 @@ insert into role(title, salary, department_id) VALUES
 ("Lawyer", 200000, 5), -- Legal
 ("Paralegal", 150000, 5), -- Legal
 ("Legal Team Lead", 270000,5); -- Legal
+("IT Support", 200000, 6), -- IT
+("IT Coordinator", 150000, 6), -- IT
+("IT Manager", 270000, 6); -- IT
 
 
 -- Employee Seeds -- 
@@ -37,19 +41,4 @@ insert into employee(first_name, last_name, role_id, manager_id) VALUES
 
 
 
--- SELECT
--- 	employee.id,
---     employee.first_name,
---     employee.last_name,
---     role.title,
---     department.name AS department,
---     role.salary,
---     CONCAT(manager.first_name, ' ', manager.last_name) AS manager
--- FROM
--- 	employee
--- LEFT JOIN 
--- 	role ON employee.role_id = role.id 
--- LEFT JOIN 
--- 	department on role.department_id = department.id
--- LEFT JOIN
--- 	employee manager on manager.id = employee.manager_id;
+
