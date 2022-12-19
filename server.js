@@ -332,13 +332,11 @@ const viewAllEmployeesByManager = () => {
       })
     })
   }
-
   
-
   //========== UPDATE EMPLOYEE MANAGER ==========//
       
     const updateEmployeeManager = () => {
-      connection.query('SELECT * FROM employee', function (err, results){
+      connection.query('SELECT * FROM manager', function (err, results){
         if (err) throw err;
         inquirer
         .prompt([{
