@@ -61,11 +61,11 @@ function mainMenu() {
         "Add a Role", // code done
         "Add an Employee", // code done
         "Update an Employee Role", // code done
-        "Update An Employee Manager", // need to work on code
-        "Remove Department", // work in progress
-        "Remove Role", // work in progress
+        "Update an Employee Manager", // work in progress
+        "Remove Department", // code done
+        "Remove Role", // code done
         "Remove Employee", // code done
-        "View the Total Utilized Budget of a Department", // the combined salaries of all employees in that department
+        "View the Total Utilized Budget of a Department", // the combined salaries of all employees in that department // work in progress
         "Exit",
       ],
     })

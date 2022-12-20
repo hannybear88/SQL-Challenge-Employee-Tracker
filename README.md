@@ -23,8 +23,27 @@ It was challenging to build the back-end and connect it to the front-end. Even t
 
 
 ## Installation
+1. Clone the repo
+2. Install all dependencies
+    - console.table
+    - inquirer 8.2.4
+    -  mysql2
 `````
 npm install
+`````
+3. Create Database Schema
+`````
+mysql -u root -p
+`````
+`````
+mysql> source ./db/schema.sql
+`````
+`````
+mysql> source db/seeds.sql
+`````
+4. Run the application 
+`````
+node server.js
 `````
 
 ## Getting Started and Bonus
@@ -48,6 +67,22 @@ You will be committing a file that contains your database credentials. Make sure
     * Delete departments, roles, and employees.
 
     * View the total utilized budget of a department—in other words, the combined salaries of all employees in that department.
+
+    * View All Departments
+    * View All Roles
+    * View All Employees
+        "View All Employees by Manager", // code done
+        "View All Employees by Department", // code done
+    * Add a Department
+    * Add a Role
+    * Add an Employee
+        "Update an Employee Role", // code done
+        "Update an Employee Manager", // work in progress
+    * Remove Department
+    * Remove Role
+        "Remove Employee", // code done
+        "View the Total Utilized Budget of a Department", // the combined salaries of all employees in that department // work in progress
+        "Exit",
 
 ## User Story
 - AS A business owner
