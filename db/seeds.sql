@@ -35,23 +35,23 @@ INSERT INTO role(title, salary, department_id) VALUES
 -- Employee Seeds -- 
 INSERT INTO employee(first_name, last_name, role_id, manager_id) VALUES
 ("Kakashi", "Hatake", 1, NULL), -- employee id
-("Asuma", "Sarutobi", 4, NULL), -- employee id 
+("Asuma", "Sarutobi", 5, NULL), -- employee id 
 ("Jiraiya","Ogata", 7, NULL), -- employee id 
 ("Shikamaru", "Nara", 10, NULL), -- employee id 
-("Sasuke", "Uchiha", 13, NULL), -- employee id 
-("Gaara","Sunagakure", 16, NULL), -- employee id 
+("Sasuke", "Uchiha", 15, NULL), -- employee id 
+("Gaara","Sunagakure", 18, NULL), -- employee id 
 ("Naruto", "Uzumaki", 2, 1), -- employee id
-("Tenzo", "Yamato", 3, 6), -- employee id 
-("Choji","Akimichi", 5, 5), -- employee id 
-("Kiba", "Inuzuka", 6, 3), -- employee id
-("Temari", "Sunagakure", 8, 2), -- employee id 
-("Itachi","Uchiha", 9, 4), -- employee id 
-("Tobi", "Zetsu", 11, 5), -- employee id
-("Hannah", "Chung", 12, 6), -- employee id 
-("Minato","Uzumaki", 14, 2), -- employee id 
-("Ei", "Ning", 15, 3), -- employee id
-("Asuma", "Sarutobi", 17, 4), -- employee id 
-("Kankuro","Sunagakure", 18, 1); -- employee id 
+("Tenzo", "Yamato", 3, 1), -- employee id 
+("Choji","Akimichi", 4, 2), -- employee id 
+("Kiba", "Inuzuka", 6, 2), -- employee id
+("Temari", "Sunagakure", 8, 3), -- employee id 
+("Itachi","Uchiha", 9, 3), -- employee id 
+("Tobi", "Zetsu", 11, 4), -- employee id
+("Mirio", "Toogata", 12, 4), -- employee id 
+("Minato","Uzumaki", 14, 5), -- employee id 
+("Shoto", "Todoroki", 13, 5), -- employee id
+("Toshinori", "Yagi", 17, 6), -- employee id 
+("Kankuro","Sunagakure", 16, 6); -- employee id 
 
 
 
