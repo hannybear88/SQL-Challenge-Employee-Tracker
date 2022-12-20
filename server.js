@@ -264,7 +264,7 @@ const viewAllEmployeesByDepartment = () => {
                         department ON role.department_id = department.id
                     ORDER BY 
                         department`;
-      // if the user wants to view employees of a specific department
+       // } else { // if the user wants to view employees of a specific department
       //     sql = `
       //         SELECT
       //             employee.id,
@@ -677,6 +677,23 @@ function viewTheTotalUtilizedBudgetOfADepartment() {
       department.name
   ORDER BY
       department.name`;
+
+      // } else { // specific department
+                // query to get the total utilized budget of a specific department
+                // sql = `
+                //     SELECT 
+                //         department.name AS department,
+                //         SUM(role.salary) AS total_budget
+                //     FROM
+                //         department
+                //     LEFT JOIN
+                //         role ON role.department_id = department.id
+                //     LEFT JOIN
+                //         employee ON employee.role_id = role.id
+                //     WHERE
+                //         department.id = ${answers.departmentId}
+                //     ORDER BY
+                //         department.name`;
   connection.query("SELECT * FROM department",  (err, res) => {   
     if (err) throw err;
     inquirer
@@ -691,24 +708,24 @@ function viewTheTotalUtilizedBudgetOfADepartment() {
       ])
       .then(function (answer) {
         const selectedDept = res.find(
-          (emp) =>
+          (dept) =>
             dept.id &&
             dept.title === answer.viewTheTotalUtilizedBudgetOfADepartment
         );
-        connection.query(
-          [
-            {
-              id: dept_id.id,
-            },
-          ],
-          function (err, res) {
-            if (err) throw err;
+        // connection.query(
+        //   [
+        //     {
+        //       id: dept_id.id,
+        //     },
+        //   ],
+        //   function (err, res) {
+        //     if (err) throw err;
             // console.log(".\n");
             mainMenu();
           }
         );
       });
-  });
+  // });
 }
 
 mainMenu();
