@@ -661,22 +661,23 @@ function removeEmployee() {
 // WHERE condition;
 
 function viewTheTotalUtilizedBudgetOfADepartment() {
-  connection.query("SELECT * FROM department", (err, res) => {   // all departments
+  // all departments
   // query to get the total utilized budget of all departments
-    sql = `
-                    SELECT 
-                        department.name AS department,
-                        SUM(role.salary) AS total_budget
-                    FROM
-                        department
-                    LEFT JOIN
-                        role ON role.department_id = department.id
-                    LEFT JOIN
-                        employee ON employee.role_id = role.id
-                    GROUP BY
-                        department.name
-                    ORDER BY
-                        department.name`;
+  sql = `
+  SELECT 
+      department.name AS department,
+      SUM(role.salary) AS total_budget
+  FROM
+      department
+  LEFT JOIN
+      role ON role.department_id = department.id
+  LEFT JOIN
+      employee ON employee.role_id = role.id
+  GROUP BY
+      department.name
+  ORDER BY
+      department.name`;
+  connection.query("SELECT * FROM department",  (err, res) => {   
     if (err) throw err;
     inquirer
       .prompt([
