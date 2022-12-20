@@ -2,13 +2,13 @@
 HW Challenge #12
 
 ## Description
-<!-- For this challenge we had to create an application called Note Taker that can be used to write and save notes. This application will use an Express.js back end and will save and retrieve note data from a JSON file.
+For this challenge we had to to build a command-line application from scratch to manage a company's employee database, using Node.js, Inquirer, and MySQL.
 
-The application’s front end has already been created and provided by UCSD Coding Bootcamp. It's our job to build the back end, connect the two, and then deploy the entire application to Heroku.
+This assignment is one of the most challenging assignments we were assigned. I had many challenges such as figuring out how to do the bonus work.Such as update employee managers, View employees by manager, View employees by department, Remove Department, Remove Role, Remove Employee, and View the total utilized budget of a department. Although, with a lot of long nights I finally got it down. Even though this assignment was very challenging and involved a lot of work, I did enjoy learning about SQL.
 
-It was challenging to build the back-end and connect it to the front-end. Even though it was challenging, it was quite enjoyable. I like making notes to myself because it helps me with reminding myself what I have coming up, what I need to do for the day, week, any events that are coming up, and etc. Another challenge I ran into was figuring out how to deploy it onto Heroku. It had failed which was frustrating because it was working fine everywhere else. I finally was able to figure it out.
+The success were that I was able to successfully build a command-line application from scratch to manage a company's employee database, using Node.js, Inquirer, and MySQL.
 
- I had successfully deployed the app on Heroku, the app has no errors in the console, and there are no errors in the app itself.  -->
+
 
 ## Table of Contents
 * [Installation](#installation)
@@ -139,6 +139,9 @@ As the image illustrates, your schema should contain the following three tables:
 - THEN I am prompted to select an employee to update and their new role and this information is updated in the database
  
  ## Usage
+
+ IF you would like to use this application, open the command-line, make sure you are in the directory you want to be in, once you are in that directory run the command "node server.js", answer the following questions prompted to you, be sure to enter required fields and select from optional additional fields when available, once you have completed the prompt then select "Exit" from the list and you will exited from the application.
+
  - When the application starts, then the user is presented with the following options listed below: 
 
     * View All Departments 
@@ -161,18 +164,61 @@ As the image illustrates, your schema should contain the following three tables:
 
 
 <!-- ## Demo 
+
+Walkthrough Video
+
+Please [click here](link here) for a walkthrough video that demonstrates its functionality and all of its tests passing.
+
+
 Screenshots
 
-**Landing Page Screenshot**
-![Landing Page Screenshot](/public/assets/images/landing_page_screenshot.png)
 
-**Note Taker Screenshots**
+**View All Departments**
+![View All Departments](path here -> /public/assets/images/landing_page_screenshot.png)
 
-![Note Taker Screenshot 1](/public/assets/images/Note_Taker_Screenshot_1.png)
+**View All Roles**
+![View All Roles](path here -> /public/assets/images/landing_page_screenshot.png)
 
-![Note Taker Screenshot 2](/public/assets/images/Note_Taker_Screenshot_2.png)
+**View All Employees**
+![View All Employees](path here -> /public/assets/images/landing_page_screenshot.png)
 
-![Note Taker Screenshot 3](/public/assets/images/Note_Taker_Screenshot_3.png) -->
+**View All Employees by Manager**
+![View All Employees by Manager](path here -> /public/assets/images/landing_page_screenshot.png)
+
+**View All Employees by Department**
+![iew All Employees by Department](path here -> /public/assets/images/landing_page_screenshot.png)
+
+**Add a Department**
+![Add a Department](path here -> /public/assets/images/landing_page_screenshot.png)
+
+**Add a Role**
+![Add a Role](path here -> /public/assets/images/landing_page_screenshot.png)
+
+**Add an Employee**
+![Add an Employee](path here -> /public/assets/images/landing_page_screenshot.png)
+
+**Update an Employee Role**
+![Update an Employee Role](path here -> /public/assets/images/landing_page_screenshot.png)
+
+**Update an Employee Manager**
+![Update an Employee Manager](path here -> /public/assets/images/landing_page_screenshot.png)
+
+**Remove Department**
+![Remove Department](path here -> /public/assets/images/landing_page_screenshot.png)
+
+
+**Remove Role**
+![Remove Role](path here -> /public/assets/images/landing_page_screenshot.png)
+
+**Remove Employee**
+![Remove Employee](path here -> /public/assets/images/landing_page_screenshot.png)
+
+**View the Total Utilized Budget of a Department**
+![View the Total Utilized Budget of a Department](path here -> /public/assets/images/landing_page_screenshot.png)
+
+**Exit**
+![Exit](path here -> /public/assets/images/landing_page_screenshot.png)
+
 
 <!-- ## Technologies Used
 
