@@ -1,7 +1,7 @@
 const inquirer = require("inquirer"); // Interact with user via command line
 const mysql = require("mysql2"); // connect to db to perform queries
-// const chalk = require('chalk'); // Terminal String Styling
-// const figlet = require('figlet') // Implement FIGfont spec in Javascript
+const chalk = require('chalk'); // Terminal String Styling
+const figlet = require('figlet') // Implement FIGfont spec in Javascript
 require("console.table"); // Print MySQL rows to the console
 
 const connection = mysql.createConnection({
@@ -36,14 +36,14 @@ connection.connect(function (err, data) {
   }
 });
 
-// connection.connect();
-// console.log(chalk.yellow.bold('======================================================================================================='));
-// console.log(``);
-// console.log(chalk.red.bold(figlet.textSync('EMPLOYEE TRACKER')));
-// console.log(``);
-// console.log(`                               ` + chalk.green.bold('(C)ONTENT (M)ANAGEMENT (S)YSTEM'));
-// console.log(``);
-// console.log(chalk.yellow.bold(`======================================================================================================`));
+connection.connect();
+console.log(chalk.yellow.bold('======================================================================================================='));
+console.log(``);
+console.log(chalk.red.bold(figlet.textSync('EMPLOYEE TRACKER')));
+console.log(``);
+console.log(`                               ` + chalk.green.bold('(C)ONTENT (M)ANAGEMENT (S)YSTEM'));
+console.log(``);
+console.log(chalk.yellow.bold(`======================================================================================================`));
 
 function mainMenu() {
   inquirer
@@ -311,7 +311,8 @@ function addADepartment() {
         },
         function (err) {
           if (err) throw err;
-          console.log("Successfully added a department!");
+          // console.log("Successfully added a department!");
+          console.log(chalk.green("Successfully added a department!"));
           console.table(res);
           mainMenu();
         }
@@ -347,7 +348,7 @@ function addARole() {
             },
             function (err) {
               if (err) throw err;
-              console.log("Successfully added an employee role!");
+              console.log(chalk.green("Successfully added an employee role!"));
               console.table(res);
               mainMenu();
             }
@@ -413,13 +414,13 @@ function addAnEmployee() {
                 },
                 function (err) {
                   if (err) throw err;
-                  console.log(
-                    "Added " +
+                  console.log(chalk.green(
+                    "Successfully added " +
                       employeeFirstName +
                       " " +
                       employeeLastName +
                       " to the team!"
-                  );
+                  ));
                   mainMenu();
                 }
               );
@@ -470,13 +471,13 @@ const updateAnEmployeeRole = () => {
                 },
                 function (err) {
                   if (err) throw err;
-                  console.log(
+                  console.log(chalk.yellow(
                     "Successfully updated " +
                       updateEmployee +
                       "'s role to " +
                       answer.role_id +
                       "!"
-                  );
+                  ));
                   mainMenu();
                 }
               );
@@ -530,13 +531,13 @@ const updateAnEmployeeManager = () => {
                 },
                 function (err) {
                   if (err) throw err;
-                  console.log(
+                  console.log(chalk.yellow(
                     "Successfully updated " +
                       updateEmployee +
                       "'s role to " +
                       answer.role_id +
                       "!"
-                  );
+                  ));
                   mainMenu();
                 }
               );
@@ -576,7 +577,7 @@ function removeDepartment() {
           ],
           function (err, res) {
             if (err) throw err;
-            console.log("The department has been removed.\n");
+            console.log(chalk.red("The department has been successfully removed!\n"));
             mainMenu();
           }
         );
@@ -614,7 +615,7 @@ function removeRole() {
           ],
           function (err, res) {
             if (err) throw err;
-            console.log("The role has been removed.\n");
+            console.log(chalk.red("The role has been successfully removed!\n"));
             mainMenu();
           }
         );
@@ -649,7 +650,7 @@ function removeEmployee() {
           ],
           function (err, res) {
             if (err) throw err;
-            console.log("The employee has been removed.\n");
+            console.log(chalk.red("The employee has been successfully removed!\n"));
             mainMenu();
           }
         );
