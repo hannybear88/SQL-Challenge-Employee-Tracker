@@ -11,7 +11,7 @@ insert into department(name) VALUES
 ("IT"); -- 6
 
 -- Role Seeds -- 
-insert into role(title, salary, department_id) VALUES
+insert into role(title, department, salary, department_id) VALUES
 ("HR Manager", 200000, 1), -- HR -- role id 1 
 ("HR Information Specialist", 170000, 1),  -- HR -- role id 2 
 ("HR Coordinator", 150000, 1),  -- HR -- role id 3

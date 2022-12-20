@@ -1,6 +1,8 @@
-const inquirer = require("inquirer");
-const mysql = require("mysql2");
-require("console.table");
+const inquirer = require("inquirer"); // Interact with user via command line
+const mysql = require("mysql2"); // connect to db to perform queries 
+// const chalk = require('chalk'); // Terminal String Styling
+// const figlet = require('figlet') // Implement FIGfont spec in Javascript
+require("console.table"); // Print MySQL rows to the console
 
 const connection = mysql.createConnection({
   host: "localhost",
@@ -35,13 +37,13 @@ connection.connect(function (err, data) {
 });
 
 // connection.connect();
-console.log(chalk.yellow.bold('======================================================================================================='));
-console.log(``);
-console.log(chalk.red.bold(figlet.textSync('EMPLOYEE TRACKER')));
-console.log(``);
-console.log(`                               ` + chalk.green.bold('(C)ONTENT (M)ANAGEMENT (S)YSTEM'));
-console.log(``);
-console.log(chalk.yellow.bold(`======================================================================================================`));
+// console.log(chalk.yellow.bold('======================================================================================================='));
+// console.log(``);
+// console.log(chalk.red.bold(figlet.textSync('EMPLOYEE TRACKER')));
+// console.log(``);
+// console.log(`                               ` + chalk.green.bold('(C)ONTENT (M)ANAGEMENT (S)YSTEM'));
+// console.log(``);
+// console.log(chalk.yellow.bold(`======================================================================================================`));
 
 function mainMenu() {
     inquirer.prompt(
