@@ -188,7 +188,8 @@ function viewAllEmployeess() {
 const viewAllEmployeesByManager = () => {
   connection.query(
     "SELECT employee.first_name, employee.last_name, CONCAT (manager.first_name, ' ', manager.last_name) AS Manager_Name FROM employee JOIN employee AS manager ON employee.manager_id = manager.id;",
-    (err, res) => { // if the user wants to view employees of all managers
+    (err, res) => {
+      // if the user wants to view employees of all managers
       sql = `
                     SELECT
                         CONCAT(manager.first_name, ' ', manager.last_name) AS manager,
@@ -228,11 +229,12 @@ const viewAllEmployeesByManager = () => {
       //         WHERE
       //             manager.id = ${answers.managerId}`;
       // }
-  
-      if (err) throw err;
-      console.table(res);
-      mainMenu();
-      }
+      connection.query(sql, (err, res) => {
+        if (err) throw err;
+        console.table(res);
+        mainMenu();
+      });
+    }
   );
 };
 
@@ -241,7 +243,8 @@ const viewAllEmployeesByManager = () => {
 const viewAllEmployeesByDepartment = () => {
   connection.query(
     "SELECT employee.first_name, employee.last_name, department.name AS Department FROM employee JOIN role ON employee.role_id = role.id JOIN department ON role.department_id = department.id ORDER BY employee.id;",
-    (err, res) => { // if the user wants to view employees of all departments
+    (err, res) => {
+      // if the user wants to view employees of all departments
       sql = `    
                     SELECT
                         department.name AS department, 
@@ -281,9 +284,11 @@ const viewAllEmployeesByDepartment = () => {
       //         WHERE
       //             department.id = ${answers.departmentId}`;
       // }
-      if (err) throw err;
-      console.table(res);
-      mainMenu();
+      connection.query(sql, (err, res) => {
+        if (err) throw err;
+        console.table(res);
+        mainMenu();
+      });
     }
   );
 };
@@ -654,5 +659,55 @@ function removeEmployee() {
 // SELECT SUM(salary)
 // FROM Role
 // WHERE condition;
+
+function viewTheTotalUtilizedBudgetOfADepartment() {
+  connection.query("SELECT * FROM department", (err, res) => {   // all departments
+  // query to get the total utilized budget of all departments
+    sql = `
+                    SELECT 
+                        department.name AS department,
+                        SUM(role.salary) AS total_budget
+                    FROM
+                        department
+                    LEFT JOIN
+                        role ON role.department_id = department.id
+                    LEFT JOIN
+                        employee ON employee.role_id = role.id
+                    GROUP BY
+                        department.name
+                    ORDER BY
+                        department.name`;
+    if (err) throw err;
+    inquirer
+      .prompt([
+        {
+          type: "rawlist",
+          name: "viewTheTotalUtilizedBudgetOfADepartment",
+          message:
+            "Which department's total utilized budget would you like to view?",
+          choices: res.map((emp) => emp.id && emp.dept_id),
+        },
+      ])
+      .then(function (answer) {
+        const selectedDept = res.find(
+          (emp) =>
+            dept.id &&
+            dept.title === answer.viewTheTotalUtilizedBudgetOfADepartment
+        );
+        connection.query(
+          [
+            {
+              id: dept_id.id,
+            },
+          ],
+          function (err, res) {
+            if (err) throw err;
+            // console.log(".\n");
+            mainMenu();
+          }
+        );
+      });
+  });
+}
 
 mainMenu();
