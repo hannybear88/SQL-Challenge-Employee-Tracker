@@ -19,6 +19,14 @@ const connection = mysql.createConnection({
 //       database: process.env.DB_NAME
 //   },
 
+// const connection = mysql.createConnection({
+//   host: 'localhost',
+//   port: 3306,
+//   user: 'root',
+//   password: process.env.DB_PASSWORD,
+//   database: 'employeeTracker_db'
+// });
+
 connection.connect(function (err, data) {
   if (err){
     console.log(err)
@@ -26,7 +34,14 @@ connection.connect(function (err, data) {
   }
 });
 
-
+// connection.connect();
+console.log(chalk.yellow.bold('======================================================================================================='));
+console.log(``);
+console.log(chalk.red.bold(figlet.textSync('EMPLOYEE TRACKER')));
+console.log(``);
+console.log(`                               ` + chalk.green.bold('(C)ONTENT (M)ANAGEMENT (S)YSTEM'));
+console.log(``);
+console.log(chalk.yellow.bold(`======================================================================================================`));
 
 function mainMenu() {
     inquirer.prompt(
@@ -38,13 +53,13 @@ function mainMenu() {
                 "View All Departments", // code done 
                 "View All Roles", // code done 
                 "View All Employees", // code done 
-                "View All Employees by Manager", // need to work on code 
+                "View All Employees by Manager", // code done
                 "View All Employees by Department", // code done 
                 "Add a Department", // code done 
                 "Add a Role", // code done 
                 "Add an Employee", // code done 
                 "Update an Employee Role", // code done 
-                "Update Employee Manager", // need to work on code 
+                "Update An Employee Manager", // need to work on code 
                 "Remove Department", // work in progress
                 "Remove Role", // work in progress
                 "Remove Employee", // code done
@@ -54,46 +69,43 @@ function mainMenu() {
         }
     )
     .then(({action}) => {
-        if(action == "View All Departments") {
+        if(action == "View All Departments") { //
             viewAllDepartments()
         }
-        if(action == "View All Roles") {
+        if(action == "View All Roles") { //
             viewAllRoles()
         }
-        if(action == "View All Employees") {
+        if(action == "View All Employees") { //
             viewAllEmployeess()
         }
-        if(action == "View All Employees by Role") {
-          viewAllEmployeesByRole()
-        }
-        if(action == "View All Employees by Manager") {
+        if(action == "View All Employees by Manager") { ///
           viewAllEmployeesByManager()
         }
-        if(action == "View All Employees by Department") {
+        if(action == "View All Employees by Department") { ///
           viewAllEmployeesByDepartment()
         }
-        if(action == "Add a Department") {
+        if(action == "Add a Department") { //
             addADepartment()
         }
-        if(action == "Add a Role") {
+        if(action == "Add a Role") { //
             addARole()
         }
-        if(action == "Add an Employee") {
+        if(action == "Add an Employee") { //
             addAnEmployee()
         }
-        if(action == "Update an Employee Role") {
+        if(action == "Update an Employee Role") { //
             updateAnEmployeeRole()
         }
-        if(action == "Update an Employee Manager") {
+        if(action == "Update an Employee Manager") { /////
             updateAnEmployeeManager()
         }
-        if(action == "Remove Department") {
+        if(action == "Remove Department") { ///
           removeDepartment()
       }
-        if(action == "Remove Role") {
+        if(action == "Remove Role") { ///
           removeRole()
       }
-        if(action == "Remove Employee") {
+        if(action == "Remove Employee") { ///
           removeEmployee()
       }   
        if(action == "View the Total Utilized Budget of a Department") {
@@ -131,8 +143,6 @@ function viewAllEmployeess() {
         mainMenu();
     })
 }
-
-
 
 //========== VIEW ALL EMPLOYEES BY MANAGER ==========//
 
@@ -178,7 +188,6 @@ const viewAllEmployeesByManager = () => {
           )
       })
     }
-
 
     //========== ADD A ROLE ==========//
 
@@ -332,11 +341,11 @@ const viewAllEmployeesByManager = () => {
       })
     })
   }
-  
-  //========== UPDATE EMPLOYEE MANAGER ==========//
+
+  //========== UPDATE AN EMPLOYEE MANAGER ==========//
       
-    const updateEmployeeManager = () => {
-      connection.query('SELECT * FROM manager', function (err, results){
+    const updateAnEmployeeManager = () => {
+      connection.query('SELECT * FROM employee', function (err, results){
         if (err) throw err;
         inquirer
         .prompt([{
@@ -353,7 +362,7 @@ const viewAllEmployeesByManager = () => {
                 inquirer
                 .prompt([
             {
-            name: 'role_id',
+            name: 'manager_id',
             type: 'list',
             message: "Select the new manager of the employee.",
             choices: results.map(employee_role => employee_role.title)
@@ -473,7 +482,9 @@ const viewAllEmployeesByManager = () => {
   };
   
   //========== VIEW THE TOTAL UTILIZED BUDGET OF A DEPARTMENT ========== //  // the combined salaries of all employees in that department
-  // SELECT 
+  // SELECT SUM(salary)
+  // FROM Role
+  // WHERE condition;
 
   
 
