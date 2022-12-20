@@ -68,21 +68,21 @@ You will be committing a file that contains your database credentials. Make sure
 
     * View the total utilized budget of a department—in other words, the combined salaries of all employees in that department.
 
-    * View All Departments
-    * View All Roles
-    * View All Employees
-        "View All Employees by Manager", // code done
-        "View All Employees by Department", // code done
-    * Add a Department
-    * Add a Role
-    * Add an Employee
-        "Update an Employee Role", // code done
-        "Update an Employee Manager", // work in progress
-    * Remove Department
-    * Remove Role
-        "Remove Employee", // code done
-        "View the Total Utilized Budget of a Department", // the combined salaries of all employees in that department // work in progress
-        "Exit",
+    * View All Departments //
+    * View All Roles //
+    * View All Employees //
+    * View All Employees by Manager //
+    * View All Employees by Department //
+    * Add a Department //
+    * Add a Role //
+    * Add an Employee //
+    * Update an Employee Role //
+    * Update an Employee Manager //
+    * Remove Department //
+    * Remove Role //
+    * Remove Employee //
+    * View the Total Utilized Budget of a Department //
+    * Exit
 
 ## User Story
 - AS A business owner

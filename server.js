@@ -489,21 +489,22 @@ const updateAnEmployeeRole = () => {
 //========== UPDATE AN EMPLOYEE MANAGER ==========//
 
 const updateAnEmployeeManager = () => {
-  connection.query("SELECT * FROM employee", function (err, results) {
-    if (err) throw err;
+  connection.query("SELECT * FROM employee", function (err, results) { 
+    if (err) throw err; 
     inquirer
       .prompt([
         {
           name: "managerUpdate",
           type: "list",
           message:
-            "Choose the employee whose manager you would like to update.",
+            "Which Employee's Manager Would You Like to Update?",
           choices: results.map((employee) => employee.first_name),
         },
       ])
       .then((answer) => {
         const updateManager = answer.managerUpdate;
-        connection.query("SELECT * FROM role", function (err, results) {
+        connection.query("SELECT * FROM role", function (err, results) {  
+          
           if (err) throw err;
           inquirer
             .prompt([
@@ -519,7 +520,8 @@ const updateAnEmployeeManager = () => {
                 (employee_role) => employee_role.title === answer.role_id
               );
               connection.query(
-                "UPDATE employee SET ? WHERE first_name = " +
+                
+                "UPDATE employee SET manager_id = ? WHERE id = ?" +
                   "'" +
                   updateEmployee +
                   "'",
