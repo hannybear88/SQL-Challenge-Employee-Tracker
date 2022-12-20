@@ -1,14 +1,14 @@
-drop database if exists employee_tracker;
+DROP DATABASE if exists employee_tracker;
 
-create database employee_tracker;
+CREATE DATABASE employee_tracker;
 use employee_tracker;
 
-create table department (
+CREATE TABLE department (
     id INT PRIMARY KEY AUTO_INCREMENT, 
     name VARCHAR(30) -- to hold department name 
 );
 
-create table role (
+CREATE TABLE role (
     id INT PRIMARY KEY AUTO_INCREMENT,
     title VARCHAR(30), -- to hold role title 
     salary DECIMAL, -- to hold role salary
@@ -16,7 +16,7 @@ create table role (
     FOREIGN KEY (department_id) REFERENCES department(id)
 );
 
-create table employee (
+CREATE TABLE employee (
    id INT PRIMARY KEY AUTO_INCREMENT,
     first_name VARCHAR(30), -- to hold employee first name
     last_name VARCHAR(30), -- to hold employee last name

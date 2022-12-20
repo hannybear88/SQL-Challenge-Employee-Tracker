@@ -2,7 +2,7 @@
 use employee_tracker;
 
 -- Department Seeds --
-insert into department(name) VALUES 
+INSERT INTO department(name) VALUES 
 ("HR"), -- 1
 ("Engineering"), -- 2
 ("Sales"), -- 3
@@ -11,7 +11,7 @@ insert into department(name) VALUES
 ("IT"); -- 6
 
 -- Role Seeds -- 
-insert into role(title, department, salary, department_id) VALUES
+INSERT INTO role(title, salary, department_id) VALUES
 ("HR Manager", 200000, 1), -- HR -- role id 1 
 ("HR Information Specialist", 170000, 1),  -- HR -- role id 2 
 ("HR Coordinator", 150000, 1),  -- HR -- role id 3
@@ -33,7 +33,7 @@ insert into role(title, department, salary, department_id) VALUES
 
 
 -- Employee Seeds -- 
-insert into employee(first_name, last_name, role_id, manager_id) VALUES
+INSERT INTO employee(first_name, last_name, role_id, manager_id) VALUES
 ("Kakashi", "Hatake", 1, NULL), -- employee id
 ("Asuma", "Sarutobi", 4, NULL), -- employee id 
 ("Jiraiya","Ogata", 7, NULL), -- employee id 
