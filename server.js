@@ -696,6 +696,7 @@ function viewTheTotalUtilizedBudgetOfADepartment() {
                 //         department.name`;
   connection.query("SELECT * FROM department",  (err, res) => {   
     if (err) throw err;
+    const departmentList = results.map((department) => {return {name: department.name, value: department.id}});
     inquirer
       .prompt([
         {
@@ -703,7 +704,7 @@ function viewTheTotalUtilizedBudgetOfADepartment() {
           name: "viewTheTotalUtilizedBudgetOfADepartment",
           message:
             "Which department's total utilized budget would you like to view?",
-          choices: res.map((emp) => emp.id && emp.dept_id),
+          choices: departmentList
         },
       ])
       .then(function (answer) {
@@ -726,6 +727,30 @@ function viewTheTotalUtilizedBudgetOfADepartment() {
         );
       });
   // });
+}
+
+
+function validateRequiredInput(name) {
+  // reject for empty string
+  if (name.trim().length <= 0) {
+      console.log(chalk.red("\nCannot be blank!"))
+      return false;
+  }
+  return true;
+}
+
+function validateRequiredNumber(id) {
+  // reject for empty string
+  if (id.trim().length <= 0) {
+      console.log(chalk.red("\nCannot be blank!"))
+      return false;
+  }
+  // reject for non-number
+  if (isNaN(id.trim())) {
+      console.log(chalk.red("\nMust be a number!"))
+      return false
+  }
+  return true;
 }
 
 mainMenu();
