@@ -36,8 +36,8 @@ INSERT INTO role(title, salary, department_id) VALUES
 ("Fashion Designer", 250000, 7), -- Fashion
 ("Fashion Assistant", 200000, 7), -- Fashion
 ("Corporate CEO", 300500, 8), -- Corporate
-("Corporate CFO", 300,200, 8), -- Corporate
-("Corporate COO", 300,000, 8); -- Corporate
+("Corporate CFO", 300200, 8), -- Corporate
+("Corporate COO", 300000, 8); -- Corporate
 
 
 -- Employee Seeds -- 
