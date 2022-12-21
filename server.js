@@ -1,7 +1,7 @@
 const inquirer = require("inquirer"); // Interact with user via command line
 const mysql = require("mysql2"); // connect to db to perform queries
-const chalk = require('chalk'); // Terminal String Styling
-const figlet = require('figlet') // Implement FIGfont spec in Javascript
+const chalk = require("chalk"); // Terminal String Styling
+const figlet = require("figlet"); // Implement FIGfont spec in Javascript
 require("console.table"); // Print MySQL rows to the console
 
 const connection = mysql.createConnection({
@@ -37,13 +37,24 @@ connection.connect(function (err, data) {
 });
 
 connection.connect();
-console.log(chalk.yellow.bold('======================================================================================================='));
+console.log(
+  chalk.yellow.bold(
+    "======================================================================================================="
+  )
+);
 console.log(``);
-console.log(chalk.red.bold(figlet.textSync('EMPLOYEE TRACKER')));
+console.log(chalk.red.bold(figlet.textSync("EMPLOYEE TRACKER")));
 console.log(``);
-console.log(`                               ` + chalk.green.bold('(C)ONTENT (M)ANAGEMENT (S)YSTEM'));
+console.log(
+  `                               ` +
+    chalk.green.bold("(C)ONTENT (M)ANAGEMENT (S)YSTEM")
+);
 console.log(``);
-console.log(chalk.yellow.bold(`======================================================================================================`));
+console.log(
+  chalk.yellow.bold(
+    `======================================================================================================`
+  )
+);
 
 function mainMenu() {
   inquirer
@@ -264,7 +275,7 @@ const viewAllEmployeesByDepartment = () => {
                         department ON role.department_id = department.id
                     ORDER BY 
                         department`;
-       // } else { // if the user wants to view employees of a specific department
+      // } else { // if the user wants to view employees of a specific department
       //     sql = `
       //         SELECT
       //             employee.id,
@@ -419,13 +430,15 @@ function addAnEmployee() {
                 },
                 function (err) {
                   if (err) throw err;
-                  console.log(chalk.green(
-                    "Successfully added " +
-                      employeeFirstName +
-                      " " +
-                      employeeLastName +
-                      " to the team!"
-                  ));
+                  console.log(
+                    chalk.green(
+                      "Successfully added " +
+                        employeeFirstName +
+                        " " +
+                        employeeLastName +
+                        " to the team!"
+                    )
+                  );
                   mainMenu();
                 }
               );
@@ -476,13 +489,15 @@ const updateAnEmployeeRole = () => {
                 },
                 function (err) {
                   if (err) throw err;
-                  console.log(chalk.yellow(
-                    "Successfully updated " +
-                      updateEmployee +
-                      "'s role to " +
-                      answer.role_id +
-                      "!"
-                  ));
+                  console.log(
+                    chalk.yellow(
+                      "Successfully updated " +
+                        updateEmployee +
+                        "'s role to " +
+                        answer.role_id +
+                        "!"
+                    )
+                  );
                   mainMenu();
                 }
               );
@@ -495,22 +510,20 @@ const updateAnEmployeeRole = () => {
 //========== UPDATE AN EMPLOYEE MANAGER ==========//
 
 const updateAnEmployeeManager = () => {
-  connection.query("SELECT * FROM employee", function (err, results) { 
-    if (err) throw err; 
+  connection.query("SELECT * FROM employee", function (err, results) {
+    if (err) throw err;
     inquirer
       .prompt([
         {
           name: "managerUpdate",
           type: "list",
-          message:
-            "Which Employee's Manager Would You Like to Update?",
+          message: "Which Employee's Manager Would You Like to Update?",
           choices: results.map((employee) => employee.first_name),
         },
       ])
       .then((answer) => {
         const updateManager = answer.managerUpdate;
-        connection.query("SELECT * FROM role", function (err, results) {  
-          
+        connection.query("SELECT * FROM role", function (err, results) {
           if (err) throw err;
           inquirer
             .prompt([
@@ -526,7 +539,6 @@ const updateAnEmployeeManager = () => {
                 (employee_role) => employee_role.title === answer.role_id
               );
               connection.query(
-                
                 "UPDATE employee SET manager_id = ? WHERE id = ?" +
                   "'" +
                   updateEmployee +
@@ -536,13 +548,15 @@ const updateAnEmployeeManager = () => {
                 },
                 function (err) {
                   if (err) throw err;
-                  console.log(chalk.yellow(
-                    "Successfully updated " +
-                      updateEmployee +
-                      "'s role to " +
-                      answer.role_id +
-                      "!"
-                  ));
+                  console.log(
+                    chalk.yellow(
+                      "Successfully updated " +
+                        updateEmployee +
+                        "'s role to " +
+                        answer.role_id +
+                        "!"
+                    )
+                  );
                   mainMenu();
                 }
               );
@@ -582,7 +596,9 @@ function removeDepartment() {
           ],
           function (err, res) {
             if (err) throw err;
-            console.log(chalk.red("The department has been successfully removed!\n"));
+            console.log(
+              chalk.red("The department has been successfully removed!\n")
+            );
             mainMenu();
           }
         );
@@ -655,7 +671,9 @@ function removeEmployee() {
           ],
           function (err, res) {
             if (err) throw err;
-            console.log(chalk.red("The employee has been successfully removed!\n"));
+            console.log(
+              chalk.red("The employee has been successfully removed!\n")
+            );
             mainMenu();
           }
         );
@@ -686,25 +704,27 @@ function viewTheTotalUtilizedBudgetOfADepartment() {
   ORDER BY
       department.name`;
 
-      // } else { // specific department
-                // query to get the total utilized budget of a specific department
-                // sql = `
-                //     SELECT 
-                //         department.name AS department,
-                //         SUM(role.salary) AS total_budget
-                //     FROM
-                //         department
-                //     LEFT JOIN
-                //         role ON role.department_id = department.id
-                //     LEFT JOIN
-                //         employee ON employee.role_id = role.id
-                //     WHERE
-                //         department.id = ${answers.departmentId}
-                //     ORDER BY
-                //         department.name`;
-  connection.query("SELECT * FROM department",  (err, res) => {   
+  // } else { // specific department
+  // query to get the total utilized budget of a specific department
+  // sql = `
+  //     SELECT
+  //         department.name AS department,
+  //         SUM(role.salary) AS total_budget
+  //     FROM
+  //         department
+  //     LEFT JOIN
+  //         role ON role.department_id = department.id
+  //     LEFT JOIN
+  //         employee ON employee.role_id = role.id
+  //     WHERE
+  //         department.id = ${answers.departmentId}
+  //     ORDER BY
+  //         department.name`;
+  connection.query("SELECT * FROM department", (err, res) => {
     if (err) throw err;
-    const departmentList = results.map((department) => {return {name: department.name, value: department.id}});
+    const departmentList = results.map((department) => {
+      return { name: department.name, value: department.id };
+    });
     inquirer
       .prompt([
         {
@@ -712,7 +732,7 @@ function viewTheTotalUtilizedBudgetOfADepartment() {
           name: "viewTheTotalUtilizedBudgetOfADepartment",
           message:
             "Which department's total utilized budget would you like to view?",
-          choices: departmentList
+          choices: departmentList,
         },
       ])
       .then(function (answer) {
@@ -729,20 +749,18 @@ function viewTheTotalUtilizedBudgetOfADepartment() {
         //   ],
         //   function (err, res) {
         //     if (err) throw err;
-            // console.log(".\n");
-            mainMenu();
-          }
-        );
+        // console.log(".\n");
+        mainMenu();
       });
+  });
   // });
 }
-
 
 function validateRequiredInput(name) {
   // reject for empty string
   if (name.trim().length <= 0) {
-      console.log(chalk.red("\nCannot be blank!"))
-      return false;
+    console.log(chalk.red("\nCannot be blank!"));
+    return false;
   }
   return true;
 }
@@ -750,13 +768,13 @@ function validateRequiredInput(name) {
 function validateRequiredNumber(id) {
   // reject for empty string
   if (id.trim().length <= 0) {
-      console.log(chalk.red("\nCannot be blank!"))
-      return false;
+    console.log(chalk.red("\nCannot be blank!"));
+    return false;
   }
   // reject for non-number
   if (isNaN(id.trim())) {
-      console.log(chalk.red("\nMust be a number!"))
-      return false
+    console.log(chalk.red("\nMust be a number!"));
+    return false;
   }
   return true;
 }
