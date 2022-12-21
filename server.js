@@ -329,6 +329,11 @@ function addARole() {
       inquirer
         .prompt([
           {
+            name: "Department",
+            type: "input",
+            message: "What is the department for this role?",
+          },
+          {
             name: "Title",
             type: "input",
             message: "What is the title of the role?",
