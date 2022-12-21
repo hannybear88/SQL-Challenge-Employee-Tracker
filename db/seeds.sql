@@ -8,50 +8,58 @@ INSERT INTO department(name) VALUES
 ("Sales"), -- 3
 ("Finance"), -- 4
 ("Legal"), -- 5 
-("IT"); -- 6
+("IT"), -- 6
+("Fashion");
 
 -- Role Seeds -- 
 INSERT INTO role(title, salary, department_id) VALUES
-("HR Manager", 200000, 1), -- HR -- role id 
-("HR Information Specialist", 170000, 1),  -- HR -- role id 
-("HR Coordinator", 150000, 1),  -- HR -- role id
-("Senior Engineer", 180000, 2), -- Engineering -- role id 
-("Engineer Manager", 200000, 2),  -- Engineering -- role id 
-("Software Engineer", 120000, 2),  -- Engineering -- role id 
-("Sales Manager", 150000, 3), -- Sales -- role id
-("Sales Lead", 120000, 3), -- Sales -- role id 
-("Salesperson", 90000, 3), -- Sales -- role id 
-("Accounting Manager", 180000, 4),  -- Finance -- role id 
-("Accountant", 140000,4), -- Finance -- role id 
-("Accounting Clerk", 100000, 4),  -- Finance -- role id 
-("Lawyer", 200000, 5), -- Legal -- role id 
-("Paralegal", 150000, 5), -- Legal -- role id 
-("Legal Team Manager", 270000,5), -- Legal -- role id 
-("IT Support", 200000, 6), -- IT -- role id 
-("IT Coordinator", 150000, 6), -- IT -- role id 
-("IT Manager", 270000, 6); -- IT -- role id 
+("HR Manager", 200000, 1), -- HR 
+("HR Information Specialist", 170000, 1),  -- HR 
+("HR Coordinator", 150000, 1),  -- HR -- 
+("Senior Engineer", 180000, 2), -- Engineering 
+("Engineer Manager", 200000, 2),  -- Engineering 
+("Software Engineer", 120000, 2),  -- Engineering 
+("Sales Manager", 150000, 3), -- Sales 
+("Sales Lead", 120000, 3), -- Sales 
+("Salesperson", 90000, 3), -- Sales 
+("Accounting Manager", 180000, 4),  -- Finance 
+("Accountant", 140000,4), -- Finance 
+("Accounting Clerk", 100000, 4),  -- Finance 
+("Lawyer", 200000, 5), -- Legal 
+("Paralegal", 150000, 5), -- Legal 
+("Legal Team Manager", 270000,5), -- Legal 
+("IT Support", 200000, 6), -- IT 
+("IT Coordinator", 150000, 6), -- IT 
+("IT Manager", 270000, 6), -- IT 
+("Fashion Manager", 280000, 7), -- Fashion
+("Fashion Designer", 250000, 7), -- Fashion
+("Fashion Assistant", 200000, 7); -- Fashion
+
 
 
 -- Employee Seeds -- 
 INSERT INTO employee(first_name, last_name, role_id, manager_id) VALUES
-("Kakashi", "Hatake", 1, NULL), -- employee id
-("Asuma", "Sarutobi", 5, NULL), -- employee id 
-("Jiraiya","Ogata", 7, NULL), -- employee id 
-("Shikamaru", "Nara", 10, NULL), -- employee id 
-("Sasuke", "Uchiha", 15, NULL), -- employee id 
-("Gaara","Sunagakure", 18, NULL), -- employee id 
-("Naruto", "Uzumaki", 2, 1), -- employee id
-("Tenzo", "Yamato", 3, 1), -- employee id 
-("Choji","Akimichi", 4, 2), -- employee id 
-("Kiba", "Inuzuka", 6, 2), -- employee id
-("Temari", "Sunagakure", 8, 3), -- employee id 
-("Itachi","Uchiha", 9, 3), -- employee id 
-("Tobi", "Zetsu", 11, 4), -- employee id
-("Mirio", "Toogata", 12, 4), -- employee id 
-("Minato","Uzumaki", 14, 5), -- employee id 
-("Shoto", "Todoroki", 13, 5), -- employee id
-("Toshinori", "Yagi", 17, 6), -- employee id 
-("Kankuro","Sunagakure", 16, 6); -- employee id 
+("Kakashi", "Hatake", 1, NULL), 
+("Asuma", "Sarutobi", 5, NULL), 
+("Jiraiya","Ogata", 7, NULL), 
+("Shikamaru", "Nara", 10, NULL), 
+("Sasuke", "Uchiha", 15, NULL), 
+("Gaara","Sunagakure", 18, NULL), 
+("Jamie", "Chung", 19, NULL), 
+("Naruto", "Uzumaki", 2, 1), 
+("Tenzo", "Yamato", 3, 1), 
+("Choji","Akimichi", 4, 2), 
+("Kiba", "Inuzuka", 6, 2), 
+("Temari", "Sunagakure", 8, 3), 
+("Itachi","Uchiha", 9, 3), 
+("Tobi", "Zetsu", 11, 4), 
+("Mirio", "Toogata", 12, 4), 
+("Minato","Uzumaki", 14, 5), 
+("Shoto", "Todoroki", 13, 5), 
+("Toshinori", "Yagi", 17, 6), 
+("Kankuro","Sunagakure", 16, 6),
+("Ei", "Ning", 20, 7), 
+("Stina", "Stevenson", 21, 7); 
 
 
 

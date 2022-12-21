@@ -3,13 +3,14 @@ const mysql = require("mysql2"); // connect to db to perform queries
 const chalk = require("chalk"); // Terminal String Styling
 const figlet = require("figlet"); // Implement FIGfont spec in Javascript
 require("console.table"); // Print MySQL rows to the console
+require("dotenv").config();
 
 const connection = mysql.createConnection({
   host: "localhost",
   // Your username
   user: "root",
   // Your password
-  password: "rootroot",
+  password: process.env.DB_PASSWORD,
   database: "employee_tracker",
 });
 
@@ -312,6 +313,7 @@ function addADepartment() {
         name: "name",
         type: "input",
         message: "What department would you like to add?",
+        validate: validateRequiredInput
       },
     ])
     .then(function (res) {
@@ -342,7 +344,7 @@ function addARole() {
           {
             name: "Department",
             type: "input",
-            message: "What is the department for this role?",
+            message: "Which department does the role belong to?",
           },
           {
             name: "Title",
@@ -522,8 +524,10 @@ const updateAnEmployeeManager = () => {
         },
       ])
       .then((answer) => {
-        const updateManager = answer.managerUpdate;
-        connection.query("SELECT * FROM role", function (err, results) {
+        const updateAnEmployeeManager = results.find(
+          (employee_role) => employee_role.first_name === answer.managerUpdate
+        );
+        connection.query("SELECT * FROM employee", function (err, results) {
           if (err) throw err;
           inquirer
             .prompt([
@@ -531,29 +535,24 @@ const updateAnEmployeeManager = () => {
                 name: "manager_id",
                 type: "list",
                 message: "Select the new manager of the employee.",
-                choices: results.map((employee_role) => employee_role.title),
+                choices: results.map((employee_role) => employee_role.first_name),
               },
             ])
             .then((answer) => {
               const roleChosen = results.find(
-                (employee_role) => employee_role.title === answer.role_id
+                (employee_role) => employee_role.first_name === answer.manager_id
               );
               connection.query(
-                "UPDATE employee SET manager_id = ? WHERE id = ?" +
-                  "'" +
-                  updateEmployee +
-                  "'",
-                {
-                  role_id: "" + roleChosen.id + "",
-                },
+                "UPDATE employee SET manager_id = ? WHERE id = ?",
+                [roleChosen.id, updateAnEmployeeManager.id],
                 function (err) {
                   if (err) throw err;
                   console.log(
                     chalk.yellow(
                       "Successfully updated " +
-                        updateEmployee +
+                        updateAnEmployeeManager.first_name +
                         "'s role to " +
-                        answer.role_id +
+                        roleChosen.first_name +
                         "!"
                     )
                   );
@@ -597,7 +596,7 @@ function removeDepartment() {
           function (err, res) {
             if (err) throw err;
             console.log(
-              chalk.red("The department has been successfully removed!\n")
+              chalk.blue("The department has been successfully removed!\n")
             );
             mainMenu();
           }
@@ -636,7 +635,7 @@ function removeRole() {
           ],
           function (err, res) {
             if (err) throw err;
-            console.log(chalk.red("The role has been successfully removed!\n"));
+            console.log(chalk.blue("The role has been successfully removed!\n"));
             mainMenu();
           }
         );
@@ -672,7 +671,7 @@ function removeEmployee() {
           function (err, res) {
             if (err) throw err;
             console.log(
-              chalk.red("The employee has been successfully removed!\n")
+              chalk.blue("The employee has been successfully removed!\n")
             );
             mainMenu();
           }
@@ -689,20 +688,20 @@ function removeEmployee() {
 function viewTheTotalUtilizedBudgetOfADepartment() {
   // all departments
   // query to get the total utilized budget of all departments
-  sql = `
-  SELECT 
-      department.name AS department,
-      SUM(role.salary) AS total_budget
-  FROM
-      department
-  LEFT JOIN
-      role ON role.department_id = department.id
-  LEFT JOIN
-      employee ON employee.role_id = role.id
-  GROUP BY
-      department.name
-  ORDER BY
-      department.name`;
+  // sql = `
+  // SELECT 
+  //     department.name AS department,
+  //     SUM(role.salary) AS total_budget
+  // FROM
+  //     department
+  // LEFT JOIN
+  //     role ON role.department_id = department.id
+  // LEFT JOIN
+  //     employee ON employee.role_id = role.id
+  // GROUP BY
+  //     department.name
+  // ORDER BY
+  //     department.name`;
 
   // } else { // specific department
   // query to get the total utilized budget of a specific department
@@ -722,7 +721,7 @@ function viewTheTotalUtilizedBudgetOfADepartment() {
   //         department.name`;
   connection.query("SELECT * FROM department", (err, res) => {
     if (err) throw err;
-    const departmentList = results.map((department) => {
+    const departmentList = res.map((department) => {
       return { name: department.name, value: department.id };
     });
     inquirer
@@ -738,22 +737,29 @@ function viewTheTotalUtilizedBudgetOfADepartment() {
       .then(function (answer) {
         const selectedDept = res.find(
           (dept) =>
-            dept.id &&
-            dept.title === answer.viewTheTotalUtilizedBudgetOfADepartment
+            dept.id === answer.viewTheTotalUtilizedBudgetOfADepartment
         );
-        // connection.query(
-        //   [
-        //     {
-        //       id: dept_id.id,
-        //     },
-        //   ],
-        //   function (err, res) {
-        //     if (err) throw err;
-        // console.log(".\n");
+        connection.query(`SELECT 
+        department.name AS department,
+        SUM(role.salary) AS total_budget
+    FROM
+        department
+    LEFT JOIN
+        role ON role.department_id = department.id
+    LEFT JOIN
+        employee ON employee.role_id = role.id
+    WHERE 
+        department.id = ?`,
+          [
+              selectedDept.id,
+          ],
+          function (err, res) {
+            if (err) throw err; console.table (res)
+        console.log("\n");
         mainMenu();
       });
   });
-  // });
+  });
 }
 
 function validateRequiredInput(name) {
