@@ -9,7 +9,8 @@ INSERT INTO department(name) VALUES
 ("Finance"), -- 4
 ("Legal"), -- 5 
 ("IT"), -- 6
-("Fashion");
+("Fashion"), -- 7
+("Corporate"); -- 8
 
 -- Role Seeds -- 
 INSERT INTO role(title, salary, department_id) VALUES
@@ -33,8 +34,10 @@ INSERT INTO role(title, salary, department_id) VALUES
 ("IT Manager", 270000, 6), -- IT 
 ("Fashion Manager", 280000, 7), -- Fashion
 ("Fashion Designer", 250000, 7), -- Fashion
-("Fashion Assistant", 200000, 7); -- Fashion
-
+("Fashion Assistant", 200000, 7), -- Fashion
+("Corporate CEO", 300500, 8), -- Corporate
+("Corporate CFO", 300,200, 8), -- Corporate
+("Corporate COO", 300,000, 8); -- Corporate
 
 
 -- Employee Seeds -- 
@@ -45,7 +48,8 @@ INSERT INTO employee(first_name, last_name, role_id, manager_id) VALUES
 ("Shikamaru", "Nara", 10, NULL), 
 ("Sasuke", "Uchiha", 15, NULL), 
 ("Gaara","Sunagakure", 18, NULL), 
-("Jamie", "Chung", 19, NULL), 
+("Jamie", "Chung", 19, NULL),
+("Hannah", "Chung", 22, NULL), 
 ("Naruto", "Uzumaki", 2, 1), 
 ("Tenzo", "Yamato", 3, 1), 
 ("Choji","Akimichi", 4, 2), 
@@ -59,7 +63,10 @@ INSERT INTO employee(first_name, last_name, role_id, manager_id) VALUES
 ("Toshinori", "Yagi", 17, 6), 
 ("Kankuro","Sunagakure", 16, 6),
 ("Ei", "Ning", 20, 7), 
-("Stina", "Stevenson", 21, 7); 
+("Stina", "Stevenson", 21, 7),
+("Joseph","Brambila", 23, 8),
+("Catherine", "Chen", 24, 8);
+
 
 
 

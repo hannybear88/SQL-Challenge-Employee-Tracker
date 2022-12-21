@@ -345,16 +345,19 @@ function addARole() {
             name: "Department",
             type: "input",
             message: "Which department does the role belong to?",
+            validate: validateRequiredInput
           },
           {
             name: "Title",
             type: "input",
             message: "What is the title of the role?",
+            validate: validateRequiredInput
           },
           {
             name: "Salary",
             type: "input",
             message: "What is the salary of the role?",
+            validate: validateRequiredNumber
           },
         ])
         .then(function (res) {
@@ -388,17 +391,20 @@ function addAnEmployee() {
           type: "input",
           message:
             "Enter the first name of the employee you would like to add.",
+            validate: validateRequiredInput
         },
         {
           name: "last_name",
           type: "input",
           message: "Enter the last name of the employee you would like to add.",
+          validate: validateRequiredInput
         },
         {
           name: "role_id",
           type: "list",
           message: "Select the role of this employee.",
           choices: results.map((item) => item.title),
+          validate: validateRequiredInput
         },
       ])
       .then((answer) => {
@@ -416,6 +422,7 @@ function addAnEmployee() {
                 type: "list",
                 message: "Select the manager for this employee.",
                 choices: results.map((item) => item.first_name),
+                validate: validateRequiredInput
               },
             ])
             .then((answer) => {
@@ -462,6 +469,7 @@ const updateAnEmployeeRole = () => {
           type: "list",
           message: "Choose the employee whose role you would like to update.",
           choices: results.map((employee) => employee.first_name),
+          validate: validateRequiredInput
         },
       ])
       .then((answer) => {
@@ -475,6 +483,7 @@ const updateAnEmployeeRole = () => {
                 type: "list",
                 message: "Select the new role of the employee.",
                 choices: results.map((employee_role) => employee_role.title),
+                validate: validateRequiredInput
               },
             ])
             .then((answer) => {
@@ -521,6 +530,7 @@ const updateAnEmployeeManager = () => {
           type: "list",
           message: "Which Employee's Manager Would You Like to Update?",
           choices: results.map((employee) => employee.first_name),
+          validate: validateRequiredInput
         },
       ])
       .then((answer) => {
@@ -536,6 +546,7 @@ const updateAnEmployeeManager = () => {
                 type: "list",
                 message: "Select the new manager of the employee.",
                 choices: results.map((employee_role) => employee_role.first_name),
+                validate: validateRequiredInput
               },
             ])
             .then((answer) => {
@@ -576,6 +587,7 @@ function removeDepartment() {
           type: "rawlist",
           name: "removeDept",
           message: "Select the department that will be removed",
+          validate: validateRequiredInput,
           choices: res.map((dept) => {
             return {
               name: dept.name,
@@ -616,6 +628,7 @@ function removeRole() {
           type: "rawlist",
           name: "removeRole",
           message: "Select the role that will be removed",
+          validate: validateRequiredInput,
           choices: res.map((role) => {
             return {
               name: role.title,
@@ -655,6 +668,7 @@ function removeEmployee() {
           name: "removeEmp",
           message: "Select the employee who will be removed",
           choices: res.map((emp) => emp.id && emp.first_name),
+          validate: validateRequiredInput
         },
       ])
       .then(function (answer) {
@@ -732,6 +746,7 @@ function viewTheTotalUtilizedBudgetOfADepartment() {
           message:
             "Which department's total utilized budget would you like to view?",
           choices: departmentList,
+          validate: validateRequiredInput
         },
       ])
       .then(function (answer) {
