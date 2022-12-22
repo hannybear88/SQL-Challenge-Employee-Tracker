@@ -17,7 +17,7 @@ The success were that I was able to successfully build a command-line applicatio
 * [How to Use This Project and Acceptance Criteria](#How-to-Use-This-Project-and-Acceptance-Criteria)
 * [Usage](#Usage)
 * [Demo](#Demo)
-<!-- * [Technologies Used](#Technologies-Used) -->
+* [Technologies Used](#Technologies-Used)
 * [Support](#Support)
 * [Credits](#Credits)
 * [Contributors](#Contributors)
@@ -93,6 +93,10 @@ As the image illustrates, your schema should contain the following three tables:
 
     You might want to use a separate file that contains functions for performing specific SQL queries you'll need to use. A constructor function or class could be helpful for organizing these. You might also want to include a ```seeds.sql file``` to pre-populate your database, making the development of individual features much easier.
 
+Design the database schema as shown in the following image:
+![View All Departments](assets/images/Design_Database_Schema_Screenshot.png)
+
+
 **Bonus**
 
 - Try to add some additional functionality to your application, such as the ability to do the following:
@@ -114,8 +118,9 @@ As the image illustrates, your schema should contain the following three tables:
 
 ## How to Use This Project and Acceptance Criteria
 
+Click on the button below to be directed straight to the code for this repo
 [![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/hannybear88/SQL-Challenge-Employee-Tracker)
-<!-- Click on the button below to be directed straight to the Heroku deployed application -->
+
 
 
 
@@ -268,16 +273,14 @@ Screenshots
 ![Exit](/assets/images/Goodbye_Screenshot.png)
 
 
-<!-- ## Technologies Used
+## Technologies Used
 
 ![Technologies](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![Technologies](https://img.shields.io/badge/-OOP-red)
 ![Technologies](https://img.shields.io/badge/-JSON-blue)
 ![Technologies](https://img.shields.io/badge/-Node.js-339933?logo=Node.js&logoColor=white)
 ![Technologies](https://img.shields.io/badge/-npm-CB3837?logo=npm&logoColor=white)
-![Technologies](https://img.shields.io/badge/-Express-blueviolet)
-![Technologies](https://img.shields.io/badge/UUID-orange)
-![Technologies](https://img.shields.io/badge/-Heroku-grey) -->
+![Technologies](https://img.shields.io/badge/SQL2-orange)
+
 
 
 ## Support 
