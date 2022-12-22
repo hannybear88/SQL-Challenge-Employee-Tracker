@@ -337,14 +337,16 @@ function addADepartment() {
 
 function addARole() {
   connection.query(
-    "SELECT role.title AS Title, role.salary AS Salary FROM role",
-    function (err, res) {
+    "SELECT * FROM department ",
+    function (err, results) {
+      console.log (results)
       inquirer
         .prompt([
           {
             name: "Department",
-            type: "input",
+            type: "list",
             message: "Which department does the role belong to?",
+            choices: results.map((item) => item.name),
             validate: validateRequiredInput
           },
           {
@@ -361,9 +363,14 @@ function addARole() {
           },
         ])
         .then(function (res) {
+          // console.log (res)
+          const departmentChosen = results.find(
+            (item) => item.title === res.dept_id
+          );
           connection.query(
             "INSERT INTO role SET ?",
             {
+              department_id: res.Department,
               title: res.Title,
               salary: res.Salary,
             },
