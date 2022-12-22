@@ -176,7 +176,6 @@ Screenshots
 **View All Departments**
 ![View All Departments](assets/images/View_All_Departments_Screenshot.png)
 
-
 **View All Roles**
 ![View All Roles](assets/images/View_All_Roles_Screenshot.png)
 
@@ -192,27 +191,53 @@ Screenshots
 **Add a Department**
 ![Add a Department](/assets/images/Add_a_Department_Screenshot.png)
 
+* View All Departments After Adding a Department
+![ View All Departments After Adding a Department](/assets/images/View_All_Departments_After_Adding_a_Department_Screenshot.png)
+
 **Add a Role**
 ![Add a Role](/assets/images/Add_a_Role_Screenshot.png)
+
+* View All Roles After Adding a Role
+![View All Role After Adding a Role](/assets/images/View_All_Roles_After_Adding_a_Role_Screenshot.png)
 
 **Add an Employee**
 ![Add an Employee](/assets/images/Add_an_Employee_Screenshot.png)
 
+* View All Employees After Adding an Employee 
+    ![View All Employees After Adding an Employee](/assets/images/View_All_Employees_After_Adding_an_Employee_Screenshot.png)
+
 **Update an Employee Role**
 ![Update an Employee Role](assets/images/Update_an_Employee_Role_Screenshot.png)
 
+* View All Employees After Updating Role
+![View All Employees After Updating Role](/assets/images/View_All_Employees_After_Adding_Updating_Employee_Manager_Screenshot.png)
+
 **Update an Employee Manager**
-![Update an Employee Manager](/assets/images/Update_an_Employee_Manager.png)
+![Update an Employee Manager](/assets/images/View_All_Employees_After_Adding_Updating_Employee_Manager_Screenshot.pngnod)
+
+* View All Employees After Updating Employee Manager 
+![View All Employees After Updating Employee Manager](/assets/images/View_All_Employees_After_Adding_Employee_Manager_Screenshot.png)
+
 
 **Remove Department**
 ![Remove Department](/assets/images/Remove_Department_Screenshot.png)
+
+* View All Departments After Removing a Department
+![View All Departments After Removing a Department](/assets/images/View_All_Departments_After_Removing_Department_Screenshot.png)
 
 
 **Remove Role**
 ![Remove Role](/assets/images/Remove_a_Role_Screenshot.png)
 
+* View All Roles After Removing a Role
+![View All Roles After Removing a Role](/assets/images/View_All_Roles_After_Removing_Role_Screenshot.png)
+
 **Remove Employee**
 ![Remove Employee](/assets/images/Remove_Employee_Screenshot.png)
+
+
+* View All Employees After Removing an Employee
+![View All Employees After Removing an Employee](/assets/images/View_All_Employees_After_Removing_an_Employee_Screenshot.png)
 
 **View the Total Utilized Budget of a Department**
 
