@@ -125,7 +125,7 @@ function mainMenu() {
         viewTheTotalUtilizedBudgetOfADepartment();
       }
       if (action == "Exit") {
-        console.log("Goodbye!");
+        console.log(chalk.green.bold("Goodbye!"));
         process.exit(1);
       }
     });
