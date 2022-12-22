@@ -210,13 +210,13 @@ Screenshots
 ![Update an Employee Role](assets/images/Update_an_Employee_Role_Screenshot.png)
 
 * View All Employees After Updating Role
-![View All Employees After Updating Role](/assets/images/View_All_Employees_After_Adding_Updating_Employee_Manager_Screenshot.png)
+![View All Employees After Updating Role](/assets/images/View_All_Employees_Updating_Role_Screenshot.png)
 
 **Update an Employee Manager**
 ![Update an Employee Manager](/assets/images/Update_an_Employee_Manager.png)
 
 * View All Employees After Updating Employee Manager 
-![View All Employees After Updating Employee Manager](/assets/images/View_All_Employees_After_Adding_Employee_Manager_Screenshot.png)
+![View All Employees After Updating Employee Manager](/assets/images/View_All_Employees_After_Adding_Updating_Employee_Manager_Screenshot.png)
 
 
 **Remove Department**
