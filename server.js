@@ -64,20 +64,20 @@ function mainMenu() {
       message: "What would you like to do?",
       name: "action",
       choices: [
-        "View All Departments", // code done
-        "View All Roles", // code done
-        "View All Employees", // code done
-        "View All Employees by Manager", // code done
-        "View All Employees by Department", // code done
-        "Add a Department", // code done
-        "Add a Role", // code done
-        "Add an Employee", // code done
-        "Update an Employee Role", // code done
-        "Update an Employee Manager", // work in progress
-        "Remove Department", // code done
-        "Remove Role", // code done
-        "Remove Employee", // code done
-        "View the Total Utilized Budget of a Department", // the combined salaries of all employees in that department // work in progress
+        "View All Departments", 
+        "View All Roles", 
+        "View All Employees", 
+        "View All Employees by Manager",
+        "View All Employees by Department", 
+        "Add a Department", 
+        "Add a Role", 
+        "Add an Employee",
+        "Update an Employee Role",
+        "Update an Employee Manager", 
+        "Remove Department", 
+        "Remove Role", 
+        "Remove Employee", 
+        "View the Total Utilized Budget of a Department", // the combined salaries of all employees in that department 
         "Exit",
       ],
     })
@@ -696,10 +696,7 @@ function removeEmployee() {
   });
 }
 
-//========== VIEW THE TOTAL UTILIZED BUDGET OF A DEPARTMENT ========== //  // the combined salaries of all employees in that department
-// SELECT SUM(salary)
-// FROM Role
-// WHERE condition;
+//========== VIEW THE TOTAL UTILIZED BUDGET OF A DEPARTMENT ==========  // the combined salaries of all employees in that department
 
 function viewTheTotalUtilizedBudgetOfADepartment() {
   // all departments
@@ -719,22 +716,6 @@ function viewTheTotalUtilizedBudgetOfADepartment() {
   // ORDER BY
   //     department.name`;
 
-  // } else { // specific department
-  // query to get the total utilized budget of a specific department
-  // sql = `
-  //     SELECT
-  //         department.name AS department,
-  //         SUM(role.salary) AS total_budget
-  //     FROM
-  //         department
-  //     LEFT JOIN
-  //         role ON role.department_id = department.id
-  //     LEFT JOIN
-  //         employee ON employee.role_id = role.id
-  //     WHERE
-  //         department.id = ${answers.departmentId}
-  //     ORDER BY
-  //         department.name`;
   connection.query("SELECT * FROM department", (err, res) => {
     if (err) throw err;
     const departmentList = res.map((department) => {
@@ -756,7 +737,8 @@ function viewTheTotalUtilizedBudgetOfADepartment() {
           (dept) =>
             dept.id === answer.viewTheTotalUtilizedBudgetOfADepartment
         );
-        connection.query(`SELECT 
+        connection.query(
+   `SELECT 
         department.name AS department,
         SUM(role.salary) AS total_budget
     FROM

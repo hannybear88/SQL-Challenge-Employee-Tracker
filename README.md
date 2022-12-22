@@ -117,7 +117,6 @@ As the image illustrates, your schema should contain the following three tables:
 [![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/hannybear88/SQL-Challenge-Employee-Tracker)
 <!-- Click on the button below to be directed straight to the Heroku deployed application -->
 
-<!-- [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://expressjs-challenge-note-taker.herokuapp.com/) -->
 
 
 - GIVEN a command-line application that accepts user input
@@ -163,61 +162,86 @@ As the image illustrates, your schema should contain the following three tables:
 
 
 
-<!-- ## Demo 
+ ## Demo 
 
 Walkthrough Video
 
-Please [click here](link here) for a walkthrough video that demonstrates its functionality and all of its tests passing.
+Please [click here](https://youtu.be/t5phnogfH_c) for a walkthrough video that demonstrates its functionality and all of its tests passing.
+
 
 
 Screenshots
 
 
 **View All Departments**
-![View All Departments](path here -> /public/assets/images/landing_page_screenshot.png)
+![View All Departments](assets/images/View_All_Departments_Screenshot.png)
+
 
 **View All Roles**
-![View All Roles](path here -> /public/assets/images/landing_page_screenshot.png)
+![View All Roles](assets/images/View_All_Roles_Screenshot.png)
 
 **View All Employees**
-![View All Employees](path here -> /public/assets/images/landing_page_screenshot.png)
+![View All Employees](assets/images/View_All_Employees_Screenshot.png)
 
 **View All Employees by Manager**
-![View All Employees by Manager](path here -> /public/assets/images/landing_page_screenshot.png)
+![View All Employees by Manager](/assets/images/View_All_Employees_By_Manager_Screenshot.png)
 
 **View All Employees by Department**
-![iew All Employees by Department](path here -> /public/assets/images/landing_page_screenshot.png)
+![iew All Employees by Department](assets/images/View_All_Employees_By_Department_Screenshot.png)
 
 **Add a Department**
-![Add a Department](path here -> /public/assets/images/landing_page_screenshot.png)
+![Add a Department](/assets/images/Add_a_Department_Screenshot.png)
 
 **Add a Role**
-![Add a Role](path here -> /public/assets/images/landing_page_screenshot.png)
+![Add a Role](/assets/images/Add_a_Role_Screenshot.png)
 
 **Add an Employee**
-![Add an Employee](path here -> /public/assets/images/landing_page_screenshot.png)
+![Add an Employee](/assets/images/Add_an_Employee_Screenshot.png)
 
 **Update an Employee Role**
-![Update an Employee Role](path here -> /public/assets/images/landing_page_screenshot.png)
+![Update an Employee Role](assets/images/Update_an_Employee_Role_Screenshot.png)
 
 **Update an Employee Manager**
-![Update an Employee Manager](path here -> /public/assets/images/landing_page_screenshot.png)
+![Update an Employee Manager](/assets/images/Update_an_Employee_Manager.png)
 
 **Remove Department**
-![Remove Department](path here -> /public/assets/images/landing_page_screenshot.png)
+![Remove Department](/assets/images/Remove_Department_Screenshot.png)
 
 
 **Remove Role**
-![Remove Role](path here -> /public/assets/images/landing_page_screenshot.png)
+![Remove Role](/assets/images/Remove_a_Role_Screenshot.png)
 
 **Remove Employee**
-![Remove Employee](path here -> /public/assets/images/landing_page_screenshot.png)
+![Remove Employee](/assets/images/Remove_Employee_Screenshot.png)
 
 **View the Total Utilized Budget of a Department**
-![View the Total Utilized Budget of a Department](path here -> /public/assets/images/landing_page_screenshot.png)
+
+* HR
+![View the Total Utilized Budget of a Department ](assets/images/View_the_Total_Utilized_Budget_of_a_%20Department_HR_Screenshot.png)
+
+* Engineering
+![View the Total Utilized Budget of a Department](assets/images/View_the_Total_Utilized_Budget_of_a_%20Department_Engineering_Screenshot.png)
+
+* Sales
+![View the Total Utilized Budget of a Department](assets/images/View_the_Total_Utilized_Budget_of_a_%20Department_Sales_Screenshot.png)
+
+* Finance
+![View the Total Utilized Budget of a Department](assets/images/View_the_Total_Utilized_Budget_of_a_%20Department_Finance_Screenshot.png)
+
+* Legal
+![View the Total Utilized Budget of a Department](assets/images/View_the_Total_Utilized_Budget_of_a_%20Department_Legal_Screenshot.png)
+
+* IT
+![View the Total Utilized Budget of a Department](assets/images/View_the_Total_Utilized_Budget_of_a_%20Department_IT_Screenshot.png)
+
+* Fashion
+![View the Total Utilized Budget of a Department](assets/images/View_the_Total_Utilized_Budget_of_a_%20Department_Fashion_Screenshot.png)
+
+* Corporate
+![View the Total Utilized Budget of a Department](assets/images/View_the_Total_Utilized_Budget_of_a_%20Department_Corporate_Screenshot.png)
 
 **Exit**
-![Exit](path here -> /public/assets/images/landing_page_screenshot.png)
+![Exit](/assets/images/Goodbye_Screenshot.png)
 
 
 <!-- ## Technologies Used
