@@ -166,8 +166,7 @@ As the image illustrates, your schema should contain the following three tables:
 
 Walkthrough Video
 
-Please [click here](https://youtu.be/t5phnogfH_c) for a walkthrough video that demonstrates its functionality and all of its tests passing.
-
+Please [click here](https://youtu.be/t5phnogfH_c) for a walkthrough video that demonstrates the application's functionality.
 
 
 Screenshots
@@ -216,7 +215,7 @@ Screenshots
 ![Update an Employee Manager](/assets/images/Update_an_Employee_Manager.png)
 
 * View All Employees After Updating Employee Manager 
-![View All Employees After Updating Employee Manager](/assets/images/View_All_Employees_After_Adding_Updating_Employee_Manager_Screenshot.png)
+![View All Employees After Updating Employee Manager](/assets/images/View_All_Employees_After_Updating_Employee_Manager_Screenshot.png)
 
 
 **Remove Department**
