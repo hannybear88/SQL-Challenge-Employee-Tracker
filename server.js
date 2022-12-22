@@ -346,7 +346,7 @@ function addARole() {
             name: "Department",
             type: "input",
             message: "Which department id does the role belong to?",
-            validate: validateRequiredInput
+            validate: validateRequiredNumber
           },
           {
             name: "Title",
