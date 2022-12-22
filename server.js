@@ -344,9 +344,8 @@ function addARole() {
         .prompt([
           {
             name: "Department",
-            type: "list",
-            message: "Which department does the role belong to?",
-            choices: results.map((item) => item.name),
+            type: "input",
+            message: "Which department id does the role belong to?",
             validate: validateRequiredInput
           },
           {
@@ -363,10 +362,6 @@ function addARole() {
           },
         ])
         .then(function (res) {
-          // console.log (res)
-          const departmentChosen = results.find(
-            (item) => item.title === res.dept_id
-          );
           connection.query(
             "INSERT INTO role SET ?",
             {
